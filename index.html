@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PureSmile Dental Studio | Cabinet Dentaire de Prestige</title>
+  
+  <!-- Tailwind CSS CDN (v4) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <!-- Google Fonts via link tag -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-navy-dark text-pearl font-body antialiased selection:bg-mint selection:text-navy-dark">
+
+  <!-- ==================== 1. STICKY NAVBAR ==================== -->
+  <header id="navbar-container" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div id="navbar" class="max-w-7xl mx-auto px-4 md:px-8 py-6 flex items-center justify-between transition-all duration-300">
+      <!-- Logo -->
+      <a href="#" class="font-display text-2xl md:text-3xl font-bold tracking-wide text-pearl hover:text-mint transition-colors">
+        PureSmile <span class="text-mint text-xl font-normal">✦</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+        <a href="#services" class="text-pearl/80 hover:text-mint transition-colors">Services</a>
+        <a href="#galerie" class="text-pearl/80 hover:text-mint transition-colors">Galerie</a>
+        <a href="#medecins" class="text-pearl/80 hover:text-mint transition-colors">Médecins</a>
+        <a href="#temoignages" class="text-pearl/80 hover:text-mint transition-colors">Témoignages</a>
+        <a href="#reservation" class="bg-mint hover:bg-mint-hover text-navy-dark px-6 py-2.5 rounded-full font-bold transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(0,229,195,0.4)]">
+          Prendre RDV
+        </a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="menu-btn" class="block md:hidden focus:outline-none z-50 text-pearl hover:text-mint transition-colors p-2" aria-label="Menu principal">
+        <div class="w-6 h-5 relative flex flex-col justify-between">
+          <span class="w-full h-[2px] bg-current rounded transition-transform duration-300 origin-left" id="hamburger-bar-1"></span>
+          <span class="w-full h-[2px] bg-current rounded transition-opacity duration-300" id="hamburger-bar-2"></span>
+          <span class="w-full h-[2px] bg-current rounded transition-transform duration-300 origin-left" id="hamburger-bar-3"></span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-navy-dark/95 backdrop-blur-lg border-b border-mint/10 flex-col py-8 px-6 gap-6 text-center text-lg font-medium shadow-2xl transition-all duration-300">
+      <a href="#services" class="text-pearl/80 hover:text-mint py-2 border-b border-pearl/5 transition-colors">Services</a>
+      <a href="#galerie" class="text-pearl/80 hover:text-mint py-2 border-b border-pearl/5 transition-colors">Galerie</a>
+      <a href="#medecins" class="text-pearl/80 hover:text-mint py-2 border-b border-pearl/5 transition-colors">Médecins</a>
+      <a href="#temoignages" class="text-pearl/80 hover:text-mint py-2 border-b border-pearl/5 transition-colors">Témoignages</a>
+      <a href="#reservation" class="bg-mint text-navy-dark py-3 rounded-full font-bold mt-4 shadow-lg shadow-mint/20">
+        Prendre RDV
+      </a>
+    </div>
+  </header>
+
+
+  <!-- ==================== 2. HERO SECTION ==================== -->
+  <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+    <!-- Particles Background Canvas -->
+    <canvas id="hero-particles" class="absolute inset-0 w-full h-full pointer-events-none opacity-50 z-0"></canvas>
+    
+    <!-- Subtle Background Radial Glow -->
+    <div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-mint/5 filter blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 md:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Hero Copy -->
+      <div class="lg:col-span-7 flex flex-col items-start text-left">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mint/10 border border-mint/20 text-mint text-xs md:text-sm font-semibold mb-6 tracking-wider uppercase animate-pulse">
+          ✦ Cabinet Dentaire Privé de Prestige
+        </span>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-6 text-pearl">
+          Votre Sourire Parfait<br>
+          <span class="text-mint font-light italic">Commence Ici</span>
+        </h1>
+        <p class="text-lg md:text-xl text-pearl/85 font-light leading-relaxed max-w-xl mb-8">
+          Des soins dentaires de classe mondiale, alliant precision technique suisse et confort absolu d'un spa de luxe. Redécouvrez l'art du sourire.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <a href="#reservation" class="px-8 py-4 bg-mint hover:bg-mint-hover text-navy-dark font-bold rounded-xl text-center transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(0,229,195,0.4)]">
+            Consultation Gratuite
+          </a>
+          <a href="#galerie" class="px-8 py-4 border border-pearl/20 hover:border-mint text-pearl hover:text-mint font-semibold rounded-xl text-center transition-all duration-300 hover:bg-pearl/5">
+            Découvrir Nos Réalisations ↓
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Animated Tooth Graphic -->
+      <div class="lg:col-span-5 flex items-center justify-center relative">
+        <div class="relative w-72 h-72 md:w-96 md:h-96 flex items-center justify-center floating-tooth">
+          <!-- Circular Glows -->
+          <div class="absolute inset-0 rounded-full bg-mint/5 border border-mint/20"></div>
+          <div class="absolute w-5/6 h-5/6 rounded-full bg-mint/10 filter blur-2xl opacity-20"></div>
+          
+          <!-- Elegant CSS/SVG Tooth -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-60 h-60 md:w-80 md:h-80 text-mint relative z-10">
+            <defs>
+              <linearGradient id="toothGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00e5c3" />
+                <stop offset="50%" stop-color="#00c2a6" />
+                <stop offset="100%" stop-color="#008a76" />
+              </linearGradient>
+            </defs>
+            <!-- Primary Medical Tooth Path -->
+            <path d="M50,92 C47,92 41,75 35,70 C28,65 18,62 16,50 C13,38 14,14 45,14 C48,14 50,18 50,18 C50,18 52,14 55,14 C86,14 87,38 84,50 C82,62 72,65 65,70 C59,75 53,92 50,92 Z" fill="url(#toothGrad)" fill-opacity="0.12" stroke="url(#toothGrad)" stroke-width="2.5" stroke-linejoin="round" />
+            <!-- Luxury inner dotted path -->
+            <path d="M50,88 C48,88 43,73 37,68 C31,63 22,60 20,50 C18,40 19,19 45,19 C47,19 50,22 50,22 C50,22 53,19 55,19 C81,19 82,40 80,50 C78,60 69,63 63,68 C57,73 52,88 50,88 Z" fill="none" stroke="#f5f0eb" stroke-width="1" stroke-dasharray="2 4" opacity="0.35" />
+            <!-- Smile / Line of Harmony -->
+            <path d="M32,44 Q50,56 68,44" fill="none" stroke="#f5f0eb" stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
+            <path d="M38,51 Q50,60 62,51" fill="none" stroke="#00e5c3" stroke-width="1.5" stroke-linecap="round" opacity="0.5" />
+            <!-- Glowing Sparkles -->
+            <path d="M78,25 L80,21 L84,20 L80,19 L78,15 L76,19 L72,20 L76,21 Z" fill="#f5f0eb" />
+            <path d="M22,65 L24,61 L28,60 L24,59 L22,55 L20,59 L16,60 L20,61 Z" fill="#00e5c3" />
+            <circle cx="50" cy="27" r="1.5" fill="#00e5c3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== 3. STATS BAR ==================== -->
+  <section id="stats-section" class="py-16 bg-navy-light/60 border-y border-mint/10 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+      <!-- Stat 1 -->
+      <div class="text-center flex flex-col items-center">
+        <span class="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-mint counter-val" data-target="12" data-suffix="+">0+</span>
+        <p class="text-xs md:text-sm text-pearl/70 mt-2 uppercase tracking-widest font-medium">Ans d'Expérience</p>
+      </div>
+      <!-- Stat 2 -->
+      <div class="text-center flex flex-col items-center">
+        <span class="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-mint counter-val" data-target="4800" data-suffix="+">0+</span>
+        <p class="text-xs md:text-sm text-pearl/70 mt-2 uppercase tracking-widest font-medium">Sourires Réalisés</p>
+      </div>
+      <!-- Stat 3 -->
+      <div class="text-center flex flex-col items-center">
+        <span class="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-mint counter-val" data-target="98" data-suffix="%">0%</span>
+        <p class="text-xs md:text-sm text-pearl/70 mt-2 uppercase tracking-widest font-medium">Satisfaction Patient</p>
+      </div>
+      <!-- Stat 4 -->
+      <div class="text-center flex flex-col items-center">
+        <span class="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-mint counter-val" data-target="15" data-suffix="">0</span>
+        <p class="text-xs md:text-sm text-pearl/70 mt-2 uppercase tracking-widest font-medium">Spécialistes Experts</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== 4. SERVICES SECTION ==================== -->
+  <section id="services" class="py-24 relative overflow-hidden">
+    <!-- Glow -->
+    <div class="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-mint/5 filter blur-[100px] pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-20 reveal">
+        <span class="text-mint font-semibold uppercase tracking-wider text-xs md:text-sm">Prestations Bucco-Dentaires</span>
+        <h2 class="text-4xl md:text-5xl font-display text-pearl font-bold mt-2">Nos Prestations</h2>
+        <div class="w-20 h-px bg-mint mx-auto mt-4"></div>
+        <p class="text-pearl/60 max-w-2xl mx-auto mt-6 font-light">
+          Notre clinique combine des expertises complémentaires pour offrir des traitements haut de gamme sur mesure, encadrés par des protocoles rigoureux.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Blanchiment Dentaire -->
+        <div class="bg-navy-card/40 backdrop-blur-md border border-pearl/10 p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,229,195,0.12)] hover:border-mint/30 transition-all duration-300 flex flex-col justify-between group reveal">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-mint/10 flex items-center justify-center text-mint text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+              🦷
+            </div>
+            <h3 class="font-display text-2xl font-bold text-pearl mb-3 group-hover:text-mint transition-colors">Blanchiment Dentaire</h3>
+            <p class="text-pearl/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+              Retrouvez un sourire éclatant de blancheur grâce à nos technologies d'éclaircissement de pointe.
+            </p>
+          </div>
+          <button onclick="openServiceModal('blanchiment')" class="inline-flex items-center text-mint font-semibold text-sm group-hover:translate-x-[6px] transition-transform duration-300 cursor-pointer">
+            En Savoir Plus <span class="ml-1">→</span>
+          </button>
+        </div>
+
+        <!-- Orthodontie -->
+        <div class="bg-navy-card/40 backdrop-blur-md border border-pearl/10 p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,229,195,0.12)] hover:border-mint/30 transition-all duration-300 flex flex-col justify-between group reveal">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-mint/10 flex items-center justify-center text-mint text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+              🔧
+            </div>
+            <h3 class="font-display text-2xl font-bold text-pearl mb-3 group-hover:text-mint transition-colors">Orthodontie</h3>
+            <p class="text-pearl/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+              Alignez vos dents en toute discrétion grâce aux gouttières invisibles et techniques avancées.
+            </p>
+          </div>
+          <button onclick="openServiceModal('orthodontie')" class="inline-flex items-center text-mint font-semibold text-sm group-hover:translate-x-[6px] transition-transform duration-300 cursor-pointer">
+            En Savoir Plus <span class="ml-1">→</span>
+          </button>
+        </div>
+
+        <!-- Implants Dentaires -->
+        <div class="bg-navy-card/40 backdrop-blur-md border border-pearl/10 p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,229,195,0.12)] hover:border-mint/30 transition-all duration-300 flex flex-col justify-between group reveal">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-mint/10 flex items-center justify-center text-mint text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+              🪥
+            </div>
+            <h3 class="font-display text-2xl font-bold text-pearl mb-3 group-hover:text-mint transition-colors">Implants Dentaires</h3>
+            <p class="text-pearl/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+              Restaurez durablement la fonction et l'esthétique de votre dentition avec des implants premium.
+            </p>
+          </div>
+          <button onclick="openServiceModal('implants')" class="inline-flex items-center text-mint font-semibold text-sm group-hover:translate-x-[6px] transition-transform duration-300 cursor-pointer">
+            En Savoir Plus <span class="ml-1">→</span>
+          </button>
+        </div>
+
+        <!-- Facettes Dentaires -->
+        <div class="bg-navy-card/40 backdrop-blur-md border border-pearl/10 p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,229,195,0.12)] hover:border-mint/30 transition-all duration-300 flex flex-col justify-between group reveal">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-mint/10 flex items-center justify-center text-mint text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+              😁
+            </div>
+            <h3 class="font-display text-2xl font-bold text-pearl mb-3 group-hover:text-mint transition-colors">Facettes Dentaires</h3>
+            <p class="text-pearl/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+              Corrigez les imperfections de forme et de teinte pour une harmonie parfaite de votre sourire.
+            </p>
+          </div>
+          <button onclick="openServiceModal('facettes')" class="inline-flex items-center text-mint font-semibold text-sm group-hover:translate-x-[6px] transition-transform duration-300 cursor-pointer">
+            En Savoir Plus <span class="ml-1">→</span>
+          </button>
+        </div>
+
+        <!-- Soins des Gencives -->
+        <div class="bg-navy-card/40 backdrop-blur-md border border-pearl/10 p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,229,195,0.12)] hover:border-mint/30 transition-all duration-300 flex flex-col justify-between group reveal">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-mint/10 flex items-center justify-center text-mint text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+              🩺
+            </div>
+            <h3 class="font-display text-2xl font-bold text-pearl mb-3 group-hover:text-mint transition-colors">Soins des Gencives</h3>
+            <p class="text-pearl/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+              Prévention et traitement des maladies gingivales pour des fondations bucco-dentaires saines.
+            </p>
+          </div>
+          <button onclick="openServiceModal('gencives')" class="inline-flex items-center text-mint font-semibold text-sm group-hover:translate-x-[6px] transition-transform duration-300 cursor-pointer">
+            En Savoir Plus <span class="ml-1">→</span>
+          </button>
+        </div>
+
+        <!-- Dentisterie Pédiatrique -->
+        <div class="bg-navy-card/40 backdrop-blur-md border border-pearl/10 p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,229,195,0.12)] hover:border-mint/30 transition-all duration-300 flex flex-col justify-between group reveal">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-mint/10 flex items-center justify-center text-mint text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+              👶
+            </div>
+            <h3 class="font-display text-2xl font-bold text-pearl mb-3 group-hover:text-mint transition-colors">Dentisterie Pédiatrique</h3>
+            <p class="text-pearl/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+              Une approche douce et ludique pour initier les plus jeunes à la santé bucco-dentaire.
+            </p>
+          </div>
+          <button onclick="openServiceModal('pediatrique')" class="inline-flex items-center text-mint font-semibold text-sm group-hover:translate-x-[6px] transition-transform duration-300 cursor-pointer">
+            En Savoir Plus <span class="ml-1">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== 5. BEFORE/AFTER GALLERY ==================== -->
+  <section id="galerie" class="py-24 bg-navy-light/40 relative overflow-hidden">
+    <div class="absolute top-1/3 right-1/4 w-[350px] h-[350px] rounded-full bg-mint/5 filter blur-[90px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-20 reveal">
+        <span class="text-mint font-semibold uppercase tracking-wider text-xs md:text-sm">Cas Cliniques Réels</span>
+        <h2 class="text-4xl md:text-5xl font-display text-pearl font-bold mt-2">Résultats Réels, Vrais Sourires</h2>
+        <div class="w-20 h-px bg-mint mx-auto mt-4"></div>
+        <p class="text-pearl/60 max-w-2xl mx-auto mt-6 font-light">
+          Comparez les métamorphoses spectaculaires obtenues au sein de notre cabinet. Faites glisser le séparateur horizontalement pour apprécier la précision.
+        </p>
+      </div>
+
+      <!-- Before/After Cards Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Cas 01 -->
+        <div class="bg-navy-card/55 border border-pearl/10 rounded-3xl p-6 shadow-xl flex flex-col justify-between reveal">
+          <div>
+            <!-- Interactive Slider Container -->
+            <div class="relative w-full h-64 md:h-72 rounded-2xl overflow-hidden select-none before-after-container">
+              <!-- Before (Base Layer - Left) -->
+              <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200'); filter: sepia(0.35) saturate(0.85) brightness(0.88) contrast(0.95);">
+                <div class="absolute inset-0 bg-amber-950/20 mix-blend-color-burn"></div>
+              </div>
+              <span class="absolute top-4 left-4 z-10 bg-navy-dark/80 backdrop-blur-md text-amber-100 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-amber-500/20">Avant</span>
+
+              <!-- After (Overlay Layer - Right, clipped) -->
+              <div class="absolute inset-0 bg-cover bg-center after-image" style="background-image: url('https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200'); filter: brightness(1.15) saturate(1.1) contrast(1.05); clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);">
+                <div class="absolute inset-0 bg-emerald-400/5 mix-blend-overlay"></div>
+              </div>
+              <span class="absolute top-4 right-4 z-10 bg-emerald-500/80 backdrop-blur-md text-navy-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Après</span>
+
+              <!-- Handle / Divider -->
+              <div class="absolute top-0 bottom-0 w-[2px] bg-mint z-20 drag-handle" style="left: 50%;">
+                <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-mint text-navy-dark shadow-lg shadow-mint/40 flex items-center justify-center font-bold text-xs select-none">
+                  ◀▶
+                </div>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="mt-6">
+              <span class="text-mint font-semibold text-xs tracking-wider uppercase">Cas 01</span>
+              <h3 class="text-xl font-display text-pearl font-bold mt-1">Blanchiment Signature</h3>
+              <p class="text-pearl/65 text-sm mt-3 font-light leading-relaxed">
+                Traitement complet des colorations et taches chroniques. Éclat optimal retrouvé sans compromettre la santé de l'émail.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cas 02 -->
+        <div class="bg-navy-card/55 border border-pearl/10 rounded-3xl p-6 shadow-xl flex flex-col justify-between reveal">
+          <div>
+            <!-- Interactive Slider Container -->
+            <div class="relative w-full h-64 md:h-72 rounded-2xl overflow-hidden select-none before-after-container">
+              <!-- Before (Base Layer - Left) -->
+              <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/3762402/pexels-photo-3762402.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200'); filter: sepia(0.28) saturate(0.9) brightness(0.9) contrast(0.95);">
+                <div class="absolute inset-0 bg-amber-950/20 mix-blend-color-burn"></div>
+              </div>
+              <span class="absolute top-4 left-4 z-10 bg-navy-dark/80 backdrop-blur-md text-amber-100 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-amber-500/20">Avant</span>
+
+              <!-- After (Overlay Layer - Right, clipped) -->
+              <div class="absolute inset-0 bg-cover bg-center after-image" style="background-image: url('https://images.pexels.com/photos/3762402/pexels-photo-3762402.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200'); filter: brightness(1.1) saturate(1.15) contrast(1.05); clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);">
+                <div class="absolute inset-0 bg-emerald-400/5 mix-blend-overlay"></div>
+              </div>
+              <span class="absolute top-4 right-4 z-10 bg-emerald-500/80 backdrop-blur-md text-navy-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Après</span>
+
+              <!-- Handle / Divider -->
+              <div class="absolute top-0 bottom-0 w-[2px] bg-mint z-20 drag-handle" style="left: 50%;">
+                <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-mint text-navy-dark shadow-lg shadow-mint/40 flex items-center justify-center font-bold text-xs select-none">
+                  ◀▶
+                </div>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="mt-6">
+              <span class="text-mint font-semibold text-xs tracking-wider uppercase">Cas 02</span>
+              <h3 class="text-xl font-display text-pearl font-bold mt-1">Facettes Céramiques E.max</h3>
+              <p class="text-pearl/65 text-sm mt-3 font-light leading-relaxed">
+                Restauration des incisives supérieures pour corriger de légers diastèmes et harmoniser la teinte de la denture.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cas 03 -->
+        <div class="bg-navy-card/55 border border-pearl/10 rounded-3xl p-6 shadow-xl flex flex-col justify-between reveal">
+          <div>
+            <!-- Interactive Slider Container -->
+            <div class="relative w-full h-64 md:h-72 rounded-2xl overflow-hidden select-none before-after-container">
+              <!-- Before (Base Layer - Left) -->
+              <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/6627574/pexels-photo-6627574.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200'); filter: grayscale(0.4) sepia(0.2) brightness(0.85);">
+                <div class="absolute inset-0 bg-blue-950/20 mix-blend-color-burn"></div>
+              </div>
+              <span class="absolute top-4 left-4 z-10 bg-navy-dark/80 backdrop-blur-md text-amber-100 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-amber-500/20">Avant</span>
+
+              <!-- After (Overlay Layer - Right, clipped) -->
+              <div class="absolute inset-0 bg-cover bg-center after-image" style="background-image: url('https://images.pexels.com/photos/6627574/pexels-photo-6627574.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200'); filter: brightness(1.1) saturate(1.15) contrast(1.05); clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);">
+                <div class="absolute inset-0 bg-emerald-400/5 mix-blend-overlay"></div>
+              </div>
+              <span class="absolute top-4 right-4 z-10 bg-emerald-500/80 backdrop-blur-md text-navy-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Après</span>
+
+              <!-- Handle / Divider -->
+              <div class="absolute top-0 bottom-0 w-[2px] bg-mint z-20 drag-handle" style="left: 50%;">
+                <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-mint text-navy-dark shadow-lg shadow-mint/40 flex items-center justify-center font-bold text-xs select-none">
+                  ◀▶
+                </div>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="mt-6">
+              <span class="text-mint font-semibold text-xs tracking-wider uppercase">Cas 03</span>
+              <h3 class="text-xl font-display text-pearl font-bold mt-1">Réhabilitation Totale</h3>
+              <p class="text-pearl/65 text-sm mt-3 font-light leading-relaxed">
+                Pose d'implants de dernière génération combinée à des couronnes céramiques pour redessiner intégralement le sourire.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== 6. MEET THE DOCTORS ==================== -->
+  <section id="medecins" class="py-24 relative overflow-hidden">
+    <div class="absolute bottom-1/3 left-1/4 w-[400px] h-[400px] rounded-full bg-mint/5 filter blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-20 reveal">
+        <span class="text-mint font-semibold uppercase tracking-wider text-xs md:text-sm">Notre Équipe Médicale</span>
+        <h2 class="text-4xl md:text-5xl font-display text-pearl font-bold mt-2">Des Mains Expertes, Une Touche Douce</h2>
+        <div class="w-20 h-px bg-mint mx-auto mt-4"></div>
+        <p class="text-pearl/60 max-w-2xl mx-auto mt-6 font-light">
+          Découvrez les visages de PureSmile Dental Studio. Des praticiens dévoués formés aux meilleures techniques internationales de dentisterie.
+        </p>
+      </div>
+
+      <!-- Doctor Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <!-- Doctor 1 -->
+        <div class="bg-navy-card/40 border border-pearl/10 rounded-2xl p-8 text-center transition-all duration-300 hover:border-mint/30 hover:-translate-y-2 reveal">
+          <!-- Vector SVG Avatar Placeholder -->
+          <svg viewBox="0 0 100 100" class="w-28 h-28 mx-auto rounded-full bg-linear-to-tr from-navy-card to-navy-light border-2 border-mint/40 p-1 mb-6 text-mint">
+            <!-- Face & Hair -->
+            <path d="M50,22 C40,22 35,28 35,38 C35,48 40,55 50,55 C60,55 65,48 65,38 C65,28 60,22 50,22 Z" fill="#00e5c3" fill-opacity="0.1" stroke="#00e5c3" stroke-width="1.5" />
+            <!-- Hair details -->
+            <path d="M35,32 C33,26 40,18 50,18 C60,18 67,26 65,32 C65,38 66,42 67,46 C68,50 64,52 64,52" fill="none" stroke="#f5f0eb" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M35,32 C35,38 34,42 33,46 C32,50 36,52 36,52" fill="none" stroke="#f5f0eb" stroke-width="1.5" stroke-linecap="round" />
+            <!-- Shoulders & Coat -->
+            <path d="M22,78 C22,68 32,62 42,60 L45,63 L55,63 L58,60 C68,62 78,68 78,78" fill="none" stroke="#f5f0eb" stroke-width="1.5" stroke-linecap="round" />
+            <!-- Stethoscope -->
+            <path d="M43,63 C43,68 45,71 50,71 C55,71 57,68 57,63" fill="none" stroke="#00e5c3" stroke-width="1.5" stroke-linecap="round" />
+            <!-- Sparkle -->
+            <circle cx="76" cy="32" r="1.5" fill="#00e5c3" />
+          </svg>
+          <h3 class="font-display text-2xl font-bold text-pearl">Dr. Leila Mansouri</h3>
+          <p class="text-mint text-sm font-semibold tracking-wider uppercase mt-1">Dentisterie Esthétique</p>
+          <div class="w-12 h-px bg-mint/30 mx-auto my-4"></div>
+          <p class="text-pearl/70 text-sm md:text-base font-light italic leading-relaxed">
+            "Chaque sourire que nous restaurons est une œuvre d'art unique, mêlant précision médicale et harmonie naturelle."
+          </p>
+        </div>
+
+        <!-- Doctor 2 -->
+        <div class="bg-navy-card/40 border border-pearl/10 rounded-2xl p-8 text-center transition-all duration-300 hover:border-mint/30 hover:-translate-y-2 reveal">
+          <!-- Vector SVG Avatar Placeholder -->
+          <svg viewBox="0 0 100 100" class="w-28 h-28 mx-auto rounded-full bg-linear-to-tr from-navy-card to-navy-light border-2 border-mint/40 p-1 mb-6 text-mint">
+            <!-- Face & Hair -->
+            <path d="M50,22 C42,22 37,28 37,38 C37,48 42,54 50,54 C58,54 63,48 63,38 C63,28 58,22 50,22 Z" fill="#00e5c3" fill-opacity="0.1" stroke="#00e5c3" stroke-width="1.5" />
+            <!-- Hair details -->
+            <path d="M37,30 C37,24 42,16 50,16 C58,16 63,24 63,30" fill="none" stroke="#f5f0eb" stroke-width="2" stroke-linecap="round" />
+            <!-- Glasses -->
+            <path d="M41,35 L47,35 M53,35 L59,35" fill="none" stroke="#00e5c3" stroke-width="1.5" stroke-linecap="round" />
+            <circle cx="44" cy="35" r="3" fill="none" stroke="#00e5c3" stroke-width="1.2" />
+            <circle cx="56" cy="35" r="3" fill="none" stroke="#00e5c3" stroke-width="1.2" />
+            <!-- Shoulders & Coat -->
+            <path d="M22,78 C22,68 32,62 42,60 L45,64 L55,64 L58,60 C68,62 78,68 78,78" fill="none" stroke="#f5f0eb" stroke-width="1.5" stroke-linecap="round" />
+            <!-- Tie -->
+            <path d="M48,64 L52,64 L50,72 Z" fill="#00e5c3" opacity="0.8" />
+          </svg>
+          <h3 class="font-display text-2xl font-bold text-pearl">Dr. Karim Bouras</h3>
+          <p class="text-mint text-sm font-semibold tracking-wider uppercase mt-1">Orthodontiste</p>
+          <div class="w-12 h-px bg-mint/30 mx-auto my-4"></div>
+          <p class="text-pearl/70 text-sm md:text-base font-light italic leading-relaxed">
+            "Redessiner l'alignement de vos dents, c'est révéler la force et l'éclat de votre personnalité en toute confiance."
+          </p>
+        </div>
+
+        <!-- Doctor 3 -->
+        <div class="bg-navy-card/40 border border-pearl/10 rounded-2xl p-8 text-center transition-all duration-300 hover:border-mint/30 hover:-translate-y-2 reveal">
+          <!-- Vector SVG Avatar Placeholder -->
+          <svg viewBox="0 0 100 100" class="w-28 h-28 mx-auto rounded-full bg-linear-to-tr from-navy-card to-navy-light border-2 border-mint/40 p-1 mb-6 text-mint">
+            <!-- Face & Hair -->
+            <path d="M50,22 C41,22 36,28 36,38 C36,48 41,55 50,55 C59,55 64,48 64,38 C64,28 59,22 50,22 Z" fill="#00e5c3" fill-opacity="0.1" stroke="#00e5c3" stroke-width="1.5" />
+            <!-- Hair -->
+            <path d="M36,34 C33,30 35,20 50,20 C65,20 67,30 64,34" fill="none" stroke="#f5f0eb" stroke-width="1.5" stroke-linecap="round" />
+            <circle cx="50" cy="15" r="4" fill="none" stroke="#f5f0eb" stroke-width="1.5" />
+            <!-- Shoulders & Scrub -->
+            <path d="M22,78 C22,68 32,62 42,60 L45,65 L55,65 L58,60 C68,62 78,68 78,78" fill="none" stroke="#f5f0eb" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M43,60 L50,69 L57,60" fill="none" stroke="#00e5c3" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <h3 class="font-display text-2xl font-bold text-pearl">Dr. Sara Amrani</h3>
+          <p class="text-mint text-sm font-semibold tracking-wider uppercase mt-1">Implantologie</p>
+          <div class="w-12 h-px bg-mint/30 mx-auto my-4"></div>
+          <p class="text-pearl/70 text-sm md:text-base font-light italic leading-relaxed">
+            "Remplacer une dent manquante n'est pas seulement esthétique; c'est redonner vie à vos expressions et à votre confort."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== 7. TESTIMONIALS ==================== -->
+  <section id="temoignages" class="py-24 bg-navy-light/30 border-y border-mint/10 relative overflow-hidden">
+    <!-- Radial light -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-mint/5 via-transparent to-transparent pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <span class="text-mint font-semibold uppercase tracking-wider text-xs md:text-sm">Paroles de Patients</span>
+        <h2 class="text-4xl md:text-5xl font-display text-pearl font-bold mt-2">Ce Que Disent Nos Patients</h2>
+        <div class="w-20 h-px bg-mint mx-auto mt-4"></div>
+      </div>
+
+      <!-- Testimonial Carousel Container -->
+      <div class="testimonial-carousel-container relative max-w-4xl mx-auto overflow-hidden px-2 py-4">
+        <div class="testimonial-track flex transition-transform duration-500 ease-out" style="transform: translateX(0%);">
+          
+          <!-- Testimonial 1 -->
+          <div class="w-full shrink-0 px-4">
+            <div class="bg-navy-card/80 border border-pearl/10 rounded-3xl p-8 md:p-12 relative shadow-2xl">
+              <!-- Decorative quote icon -->
+              <span class="absolute top-6 left-8 font-serif text-mint text-8xl opacity-10 pointer-events-none">“</span>
+              <div class="flex items-center text-mint gap-1 mb-6 text-xl">
+                ★★★★★
+              </div>
+              <p class="text-pearl/85 text-base md:text-xl font-light italic leading-relaxed mb-8 relative z-10">
+                "Une expérience absolument irréprochable. L'équipe de PureSmile a su me mettre en confiance dès le premier rendez-vous. Le résultat de mon blanchiment dentaire dépasse toutes mes espérances ! Je recommande chaleureusement."
+              </p>
+              <div>
+                <h4 class="font-display text-xl text-pearl font-bold">Amine Rahmouni</h4>
+                <p class="text-mint/80 text-xs md:text-sm tracking-wider uppercase mt-1">Patient depuis 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="w-full shrink-0 px-4">
+            <div class="bg-navy-card/80 border border-pearl/10 rounded-3xl p-8 md:p-12 relative shadow-2xl">
+              <span class="absolute top-6 left-8 font-serif text-mint text-8xl opacity-10 pointer-events-none">“</span>
+              <div class="flex items-center text-mint gap-1 mb-6 text-xl">
+                ★★★★★
+              </div>
+              <p class="text-pearl/85 text-base md:text-xl font-light italic leading-relaxed mb-8 relative z-10">
+                "J'ai opté pour le traitement d'orthodontie invisible. Le docteur Karim Bouras a fait preuve d'un professionnalisme hors pair. Les gouttières sont confortables, discrètes, et mon alignement est désormais parfait."
+              </p>
+              <div>
+                <h4 class="font-display text-xl text-pearl font-bold">Sonia Belkacem</h4>
+                <p class="text-mint/80 text-xs md:text-sm tracking-wider uppercase mt-1">Patiente depuis 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="w-full shrink-0 px-4">
+            <div class="bg-navy-card/80 border border-pearl/10 rounded-3xl p-8 md:p-12 relative shadow-2xl">
+              <span class="absolute top-6 left-8 font-serif text-mint text-8xl opacity-10 pointer-events-none">“</span>
+              <div class="flex items-center text-mint gap-1 mb-6 text-xl">
+                ★★★★★
+              </div>
+              <p class="text-pearl/85 text-base md:text-xl font-light italic leading-relaxed mb-8 relative z-10">
+                "En tant que médecin, j'accorde une importance capitale à l'hygiène et à la rigueur technique. Chez PureSmile, j'ai trouvé un plateau technique d'exception et une équipe d'une compétence rare pour la pose de mes implants."
+              </p>
+              <div>
+                <h4 class="font-display text-xl text-pearl font-bold">Dr. Yacine Farès</h4>
+                <p class="text-mint/80 text-xs md:text-sm tracking-wider uppercase mt-1">Patient depuis 2022</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="w-full shrink-0 px-4">
+            <div class="bg-navy-card/80 border border-pearl/10 rounded-3xl p-8 md:p-12 relative shadow-2xl">
+              <span class="absolute top-6 left-8 font-serif text-mint text-8xl opacity-10 pointer-events-none">“</span>
+              <div class="flex items-center text-mint gap-1 mb-6 text-xl">
+                ★★★★★
+              </div>
+              <p class="text-pearl/85 text-base md:text-xl font-light italic leading-relaxed mb-8 relative z-10">
+                "Le cabinet est magnifique, on se croirait dans un spa de luxe à Genève. L'accueil est chaleureux et les soins pédiatriques prodigués à mon fils se sont déroulés sans aucune douleur ni peur. Merci infiniment !"
+              </p>
+              <div>
+                <h4 class="font-display text-xl text-pearl font-bold">Myriam Ould-Kadi</h4>
+                <p class="text-mint/80 text-xs md:text-sm tracking-wider uppercase mt-1">Patiente depuis 2025</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Dot Indicators -->
+        <div class="flex justify-center gap-3 mt-8 testimonial-dots relative z-10">
+          <button class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-mint testimonial-dot cursor-pointer" aria-label="Témoignage 1"></button>
+          <button class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-pearl/30 testimonial-dot cursor-pointer" aria-label="Témoignage 2"></button>
+          <button class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-pearl/30 testimonial-dot cursor-pointer" aria-label="Témoignage 3"></button>
+          <button class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-pearl/30 testimonial-dot cursor-pointer" aria-label="Témoignage 4"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== 8. RESERVATION SECTION ==================== -->
+  <section id="reservation" class="py-24 relative overflow-hidden bg-linear-to-br from-navy-dark via-navy-dark to-mint/10">
+    <!-- Overlay Glow -->
+    <div class="absolute bottom-0 right-0 w-[500px] h-[300px] bg-mint/5 filter blur-[120px] pointer-events-none"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 md:px-8 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <span class="text-mint font-semibold uppercase tracking-wider text-xs md:text-sm">Prise de Rendez-Vous Simplifiée</span>
+        <h2 class="text-4xl md:text-5xl font-display text-pearl font-bold mt-2">Prendre Rendez-Vous</h2>
+        <p class="text-pearl/60 mt-3 font-light">Moins de 60 secondes suffisent.</p>
+        <div class="w-16 h-px bg-mint mx-auto mt-4"></div>
+      </div>
+
+      <!-- Booking Form Floating Card -->
+      <div id="booking-card" class="bg-navy-card/75 backdrop-blur-xl border border-mint/20 shadow-2xl rounded-3xl p-8 md:p-12 transition-all duration-500 reveal">
+        <!-- Form Content -->
+        <form id="booking-form" class="space-y-6" novalidate>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Nom Complet -->
+            <div class="floating-group">
+              <input type="text" id="nom-complet" placeholder=" " class="floating-input" required>
+              <label for="nom-complet" class="floating-label">Nom Complet</label>
+            </div>
+            
+            <!-- Numéro de téléphone -->
+            <div class="floating-group">
+              <input type="tel" id="tel-phone" placeholder=" " class="floating-input" required>
+              <label for="tel-phone" class="floating-label">Numéro de Téléphone</label>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- E-mail -->
+            <div class="floating-group">
+              <input type="email" id="email-address" placeholder=" " class="floating-input" required>
+              <label for="email-address" class="floating-label">Adresse E-mail</label>
+            </div>
+
+            <!-- Service Selection -->
+            <div class="floating-group">
+              <select id="select-service" class="floating-input floating-select" required>
+                <option value="" disabled selected hidden></option>
+                <option value="blanchiment">Blanchiment Dentaire</option>
+                <option value="orthodontie">Orthodontie Moderne</option>
+                <option value="implants">Implants Dentaires</option>
+                <option value="facettes">Facettes Dentaires</option>
+                <option value="gencives">Parodontologie (Gencives)</option>
+                <option value="pediatrique">Dentisterie Pédiatrique</option>
+              </select>
+              <label for="select-service" class="floating-label">Choisir un Service</label>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Date picker -->
+            <div class="floating-group">
+              <input type="date" id="date-rdv" placeholder=" " class="floating-input floating-date" required>
+              <label for="date-rdv" class="floating-label">Date Souhaitée</label>
+            </div>
+
+            <!-- Time select -->
+            <div class="floating-group">
+              <select id="time-rdv" class="floating-input floating-select" required>
+                <option value="" disabled selected hidden></option>
+                <option value="matin">Matin</option>
+                <option value="midi">Après-midi</option>
+                <option value="soir">Soir</option>
+              </select>
+              <label for="time-rdv" class="floating-label">Heure Préférée</label>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="floating-group">
+            <textarea id="message-rdv" rows="4" placeholder=" " class="floating-input"></textarea>
+            <label for="message-rdv" class="floating-label">Message / Remarques (Optionnel)</label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full bg-mint hover:bg-mint-hover text-navy-dark font-bold py-4 px-8 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(0,229,195,0.35)] flex items-center justify-center gap-2 cursor-pointer text-base">
+            Confirmer Mon Rendez-Vous <span class="text-lg">→</span>
+          </button>
+        </form>
+
+        <!-- Success Animation State -->
+        <div id="booking-success" class="hidden flex-col items-center justify-center py-12 text-center space-y-6">
+          <!-- Pulse Checkmark SVG -->
+          <div class="w-20 h-20 bg-mint/10 border border-mint rounded-full flex items-center justify-center text-mint animate-bounce shadow-[0_0_20px_rgba(0,229,195,0.3)]">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 class="text-3xl font-display text-mint font-bold">Demande Envoyée !</h3>
+          <p class="text-pearl/80 max-w-md font-light leading-relaxed">
+            Nous avons bien reçu votre demande de rendez-vous. Un conseiller de notre clinique vous rappellera au numéro indiqué sous <span class="font-bold text-mint">2 heures</span> pour valider votre créneau horaire.
+          </p>
+          <button id="reset-booking" class="px-6 py-2.5 border border-pearl/20 hover:border-mint text-pearl/80 hover:text-mint rounded-lg text-sm transition-all duration-300 cursor-pointer">
+            Faire une autre demande
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== 9. FOOTER ==================== -->
+  <footer class="bg-navy-dark border-t border-pearl/5 pt-20 pb-8 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16">
+      
+      <!-- Clinic Brand Tagline -->
+      <div class="lg:col-span-4 flex flex-col justify-start">
+        <a href="#" class="font-display text-3xl font-bold tracking-wide text-pearl mb-6">
+          PureSmile <span class="text-mint text-xl font-normal">✦</span>
+        </a>
+        <p class="text-pearl/70 font-light leading-relaxed max-w-sm mb-6">
+          L'excellence au service de votre sourire. Un environnement luxueux combinant innovations cliniques et attention personnalisée.
+        </p>
+        <!-- Social Media Links -->
+        <div class="flex items-center gap-4">
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full border border-pearl/10 hover:border-mint text-pearl/60 hover:text-mint flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-full border border-pearl/10 hover:border-mint text-pearl/60 hover:text-mint flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+          <!-- WhatsApp Link -->
+          <a href="https://wa.me/213555123456" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-10 h-10 rounded-full border border-pearl/10 hover:border-mint text-pearl/60 hover:text-mint flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links Column -->
+      <div class="lg:col-span-2 flex flex-col justify-start">
+        <h4 class="text-pearl font-bold font-display text-lg tracking-wider mb-6">Navigation</h4>
+        <ul class="space-y-3 text-sm text-pearl/70 font-light">
+          <li><a href="#services" class="hover:text-mint transition-colors">Prestations</a></li>
+          <li><a href="#galerie" class="hover:text-mint transition-colors">Galerie</a></li>
+          <li><a href="#medecins" class="hover:text-mint transition-colors">Médecins</a></li>
+          <li><a href="#temoignages" class="hover:text-mint transition-colors">Témoignages</a></li>
+          <li><a href="#reservation" class="hover:text-mint transition-colors">Prendre RDV</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info Column -->
+      <div class="lg:col-span-3 flex flex-col justify-start">
+        <h4 class="text-pearl font-bold font-display text-lg tracking-wider mb-6">Coordonnées</h4>
+        <ul class="space-y-4 text-sm text-pearl/70 font-light">
+          <li class="flex items-start gap-3">
+            <span class="text-mint text-base">📍</span>
+            <span>12 Rue des Fleurs, Alger</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-mint text-base">📞</span>
+            <span>+213 555 123 456</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-mint text-base">📧</span>
+            <a href="mailto:hello@puresmile.dz" class="hover:text-mint transition-colors">hello@puresmile.dz</a>
+          </li>
+          <li class="flex items-start gap-3 mt-2">
+            <span class="text-mint text-base">⏱</span>
+            <div>
+              <p>Lun–Ven : 8h – 19h</p>
+              <p>Sam : 9h – 16h</p>
+              <p class="text-pearl/40">Dim : Fermé</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Interactive Google Map Embed Column -->
+      <div class="lg:col-span-3 flex flex-col justify-start">
+        <h4 class="text-pearl font-bold font-display text-lg tracking-wider mb-4">Nous Trouver</h4>
+        <div class="w-full h-44 rounded-xl overflow-hidden border-2 border-mint/20 shadow-lg shadow-mint/5 relative">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102282.88370591783!2d3.0135899999999998!3d36.7538827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fad678e244837%3A0x82b993717df3029f!2sAlger!5e0!3m2!1sfr!2sdz!4v1710000000000!5m2!1sfr!2sdz" 
+            class="absolute inset-0 w-full h-full border-0 grayscale invert contrast-110 opacity-75 focus:opacity-100 hover:opacity-100 transition-opacity duration-300" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localisation de PureSmile Dental Studio à Alger">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="max-w-7xl mx-auto px-4 md:px-8 border-t border-pearl/5 pt-8 text-center text-xs text-pearl/40 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>© 2025 PureSmile Dental Studio. Tous droits réservés.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-mint transition-colors">Mentions Légales</a>
+        <a href="#" class="hover:text-mint transition-colors">Politique de Confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== 10. LIVE CHAT / WHATSAPP & SCROLL TOP ==================== -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4 items-end pointer-events-none">
+    <!-- WhatsApp Floating Group -->
+    <div class="relative flex items-center group pointer-events-auto">
+      <!-- Tooltip Bubble (Left side expansion) -->
+      <a href="https://wa.me/213555123456" target="_blank" rel="noopener noreferrer" class="absolute right-16 bg-navy-card border border-mint/20 text-pearl text-xs md:text-sm font-semibold py-2 px-4 rounded-xl shadow-2xl transition-all duration-300 opacity-0 scale-95 origin-right pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto whitespace-nowrap flex items-center gap-2">
+        💬 Discutez avec nous sur WhatsApp
+      </a>
+      
+      <!-- Button -->
+      <a href="https://wa.me/213555123456" target="_blank" rel="noopener noreferrer" aria-label="Discuter sur WhatsApp" class="relative w-14 h-14 rounded-full flex items-center justify-center bg-[#25D366] text-white shadow-xl hover:scale-110 transition-transform duration-300 hover:shadow-[#25D366]/40 cursor-pointer">
+        <!-- Pulse Rings -->
+        <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-35 animate-ping" style="animation-duration: 2.2s;"></span>
+        
+        <!-- WhatsApp Icon -->
+        <svg class="w-8 h-8 relative z-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Scroll-to-Top Button -->
+    <button id="scroll-top-btn" aria-label="Retourner en haut" class="w-10 h-10 rounded-full bg-navy-card/90 border border-mint/20 text-mint flex items-center justify-center shadow-lg hover:bg-mint hover:text-navy-dark transition-all duration-300 opacity-0 scale-90 translate-y-4 cursor-pointer pointer-events-auto">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
+  </div>
+
+
+  <!-- ==================== DYNAMIC MODAL SERVICE DETAILS ==================== -->
+  <div id="service-modal" class="fixed inset-0 z-50 items-center justify-center hidden bg-navy-dark/90 backdrop-blur-md p-4">
+    <div class="bg-navy-card border border-mint/20 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative transition-transform duration-300 scale-95" id="modal-content">
+      <!-- Close button -->
+      <button id="close-modal" class="absolute top-4 right-5 text-pearl/50 hover:text-mint transition-colors text-3xl font-light cursor-pointer" aria-label="Fermer la modal">&times;</button>
+      
+      <div class="p-8 md:p-10">
+        <!-- Content -->
+        <span class="text-mint font-semibold uppercase tracking-wider text-xs md:text-sm" id="modal-subtitle">Soin Signature</span>
+        <h3 class="text-3xl md:text-4xl font-display text-pearl font-bold mt-1 mb-4" id="modal-title">Détail du Soin</h3>
+        
+        <p class="text-pearl/80 mb-6 leading-relaxed text-sm md:text-base font-light" id="modal-description">
+          Description détaillée.
+        </p>
+        
+        <h4 class="text-pearl font-semibold text-sm uppercase tracking-wider mb-3">Avantages & Caractéristiques :</h4>
+        <ul class="space-y-2 mb-8 text-pearl/80 text-sm md:text-base" id="modal-features">
+          <!-- Dynamically inserted features -->
+        </ul>
+        
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button id="modal-book-btn" class="flex-1 text-center py-3 bg-mint hover:bg-mint-hover text-navy-dark font-bold rounded-lg transition-all duration-300 shadow-lg shadow-mint/10 hover:shadow-mint/20 cursor-pointer">
+            Prendre RDV pour ce soin
+          </button>
+          <button id="modal-close-btn" class="px-6 py-3 border border-pearl/20 text-pearl hover:bg-pearl/5 rounded-lg transition-all cursor-pointer">
+            Fermer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script src="script.js"></script>
+</body>
+</html>

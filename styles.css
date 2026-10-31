@@ -1,0 +1,124 @@
+:root {
+  --color-navy-dark: #0a0e1a;
+  --color-navy-light: #111728;
+  --color-navy-card: #18223c;
+  --color-pearl: #f5f0eb;
+  --color-mint: #00e5c3;
+  --color-mint-hover: #00ccad;
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+body {
+  background-color: var(--color-navy-dark);
+  color: var(--color-pearl);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.bg-navy-dark { background-color: var(--color-navy-dark); }
+.bg-navy-light { background-color: var(--color-navy-light); }
+.bg-navy-card { background-color: var(--color-navy-card); }
+.text-pearl { color: var(--color-pearl); }
+.text-mint { color: var(--color-mint); }
+.bg-mint { background-color: var(--color-mint); }
+.border-mint { border-color: var(--color-mint); }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-navy-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 195, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-mint);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+@keyframes pulseGlow {
+  0% { filter: drop-shadow(0 0 15px rgba(0, 229, 195, 0.25)); }
+  50% { filter: drop-shadow(0 0 35px rgba(0, 229, 195, 0.55)); }
+  100% { filter: drop-shadow(0 0 15px rgba(0, 229, 195, 0.25)); }
+}
+.floating-tooth {
+  animation: float 6s ease-in-out infinite, pulseGlow 4s ease-in-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.floating-group {
+  position: relative;
+}
+.floating-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: var(--color-navy-dark);
+  border: 1px solid rgba(245, 240, 235, 0.15);
+  border-radius: 0.5rem;
+  color: var(--color-pearl);
+  transition: all 0.3s ease;
+}
+.floating-input:focus {
+  border-color: var(--color-mint);
+  outline: none;
+  box-shadow: 0 0 12px rgba(0, 229, 195, 0.15);
+}
+.floating-label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-navy-dark);
+  padding: 0 0.25rem;
+  color: rgba(245, 240, 235, 0.4);
+  font-size: 0.875rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform-origin: left top;
+}
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label,
+.floating-input:-webkit-autofill ~ .floating-label {
+  top: 0;
+  transform: translateY(-50%) scale(0.8);
+  color: var(--color-mint);
+}
+
+.floating-select ~ .floating-label,
+.floating-date ~ .floating-label {
+  top: 0;
+  transform: translateY(-50%) scale(0.8);
+  color: rgba(245, 240, 235, 0.4);
+}
+.floating-select:focus ~ .floating-label,
+.floating-date:focus ~ .floating-label {
+  color: var(--color-mint);
+}
+
+.before-after-container {
+  cursor: grab;
+  touch-action: none;
+}
+.before-after-container:active {
+  cursor: grabbing;
+}
