@@ -1,44 +1,32 @@
 // 1. MOBILE MENU TOGGLE
 const menuBtn = document.getElementById('menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
-const bar1 = document.getElementById('hamburger-bar-1');
-const bar2 = document.getElementById('hamburger-bar-2');
-const bar3 = document.getElementById('hamburger-bar-3');
+const menuIcon = document.getElementById('menu-icon');
+
+function setMobileMenuOpen(isOpen) {
+  mobileMenu.classList.toggle('hidden', !isOpen);
+  mobileMenu.classList.toggle('flex', isOpen);
+  menuIcon.classList.toggle('fa-bars', !isOpen);
+  menuIcon.classList.toggle('fa-xmark', isOpen);
+  menuBtn.setAttribute('aria-expanded', String(isOpen));
+  menuBtn.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Menu principal');
+}
 
 menuBtn.addEventListener('click', (e) => {
   e.stopPropagation();
-  mobileMenu.classList.toggle('hidden');
-  mobileMenu.classList.toggle('flex');
-  
-  bar1.classList.toggle('rotate-45');
-  bar1.classList.toggle('translate-x-[3px]');
-  bar1.classList.toggle('translate-y-[2px]');
-  
-  bar2.classList.toggle('opacity-0');
-  
-  bar3.classList.toggle('-rotate-45');
-  bar3.classList.toggle('translate-x-[3px]');
-  bar3.classList.toggle('-translate-y-[2px]');
+  setMobileMenuOpen(mobileMenu.classList.contains('hidden'));
 });
 
 document.addEventListener('click', (e) => {
   if (!mobileMenu.classList.contains('hidden') && !menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-    mobileMenu.classList.add('hidden');
-    mobileMenu.classList.remove('flex');
-    bar1.classList.remove('rotate-45', 'translate-x-[3px]', 'translate-y-[2px]');
-    bar2.classList.remove('opacity-0');
-    bar3.classList.remove('-rotate-45', 'translate-x-[3px]', '-translate-y-[2px]');
+    setMobileMenuOpen(false);
   }
 });
 
 const mobileLinks = mobileMenu.querySelectorAll('a');
 mobileLinks.forEach(link => {
   link.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-    mobileMenu.classList.remove('flex');
-    bar1.classList.remove('rotate-45', 'translate-x-[3px]', 'translate-y-[2px]');
-    bar2.classList.remove('opacity-0');
-    bar3.classList.remove('-rotate-45', 'translate-x-[3px]', '-translate-y-[2px]');
+    setMobileMenuOpen(false);
   });
 });
 
@@ -410,7 +398,7 @@ function openServiceModal(key) {
   data.features.forEach(feat => {
     const li = document.createElement('li');
     li.className = 'flex items-start gap-2';
-    li.innerHTML = `<span class="text-mint font-bold">✓</span> <span>${feat}</span>`;
+    li.innerHTML = `<i class="fa-solid fa-check text-mint" aria-hidden="true"></i> <span>${feat}</span>`;
     modalFeatures.appendChild(li);
   });
 

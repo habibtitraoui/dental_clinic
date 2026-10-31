@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-navy-dark text-pearl font-body antialiased selection:bg-mint selection:text-navy-dark">
@@ -21,7 +22,7 @@
     <div id="navbar" class="max-w-7xl mx-auto px-4 md:px-8 py-6 flex items-center justify-between transition-all duration-300">
       <!-- Logo -->
       <a href="#" class="font-display text-2xl md:text-3xl font-bold tracking-wide text-pearl hover:text-mint transition-colors">
-        PureSmile <span class="text-mint text-xl font-normal">✦</span>
+        PureSmile <i class="fa-solid fa-sparkles text-mint text-xl" aria-hidden="true"></i>
       </a>
 
       <!-- Desktop Links -->
@@ -36,12 +37,8 @@
       </nav>
 
       <!-- Mobile Hamburger Button -->
-      <button id="menu-btn" class="block md:hidden focus:outline-none z-50 text-pearl hover:text-mint transition-colors p-2" aria-label="Menu principal">
-        <div class="w-6 h-5 relative flex flex-col justify-between">
-          <span class="w-full h-[2px] bg-current rounded transition-transform duration-300 origin-left" id="hamburger-bar-1"></span>
-          <span class="w-full h-[2px] bg-current rounded transition-opacity duration-300" id="hamburger-bar-2"></span>
-          <span class="w-full h-[2px] bg-current rounded transition-transform duration-300 origin-left" id="hamburger-bar-3"></span>
-        </div>
+      <button id="menu-btn" class="block md:hidden focus:outline-none z-50 text-pearl hover:text-mint transition-colors p-2" aria-label="Menu principal" aria-expanded="false">
+        <i class="fa-solid fa-bars text-xl" id="menu-icon" aria-hidden="true"></i>
       </button>
     </div>
 
@@ -70,7 +67,7 @@
       <!-- Hero Copy -->
       <div class="lg:col-span-7 flex flex-col items-start text-left">
         <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mint/10 border border-mint/20 text-mint text-xs md:text-sm font-semibold mb-6 tracking-wider uppercase animate-pulse">
-          ✦ Cabinet Dentaire Privé de Prestige
+          <i class="fa-solid fa-sparkles" aria-hidden="true"></i> Cabinet Dentaire Privé de Prestige
         </span>
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-6 text-pearl">
           Votre Sourire Parfait<br>
@@ -84,7 +81,7 @@
             Consultation Gratuite
           </a>
           <a href="#galerie" class="px-8 py-4 border border-pearl/20 hover:border-mint text-pearl hover:text-mint font-semibold rounded-xl text-center transition-all duration-300 hover:bg-pearl/5">
-            Découvrir Nos Réalisations ↓
+            Découvrir Nos Réalisations <i class="fa-solid fa-arrow-down ml-1" aria-hidden="true"></i>
           </a>
         </div>
       </div>
@@ -172,7 +169,7 @@
         <div class="bg-navy-card/40 backdrop-blur-md border border-pearl/10 p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,229,195,0.12)] hover:border-mint/30 transition-all duration-300 flex flex-col justify-between group reveal">
           <div>
             <div class="w-12 h-12 rounded-xl bg-mint/10 flex items-center justify-center text-mint text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-              🦷
+              <i class="fa-solid fa-tooth" aria-hidden="true"></i>
             </div>
             <h3 class="font-display text-2xl font-bold text-pearl mb-3 group-hover:text-mint transition-colors">Blanchiment Dentaire</h3>
             <p class="text-pearl/70 text-sm md:text-base leading-relaxed mb-6 font-light">
@@ -180,7 +177,7 @@
             </p>
           </div>
           <button onclick="openServiceModal('blanchiment')" class="inline-flex items-center text-mint font-semibold text-sm group-hover:translate-x-[6px] transition-transform duration-300 cursor-pointer">
-            En Savoir Plus <span class="ml-1">→</span>
+            En Savoir Plus <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i>
           </button>
         </div>
 
@@ -188,7 +185,7 @@
         <div class="bg-navy-card/40 backdrop-blur-md border border-pearl/10 p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,229,195,0.12)] hover:border-mint/30 transition-all duration-300 flex flex-col justify-between group reveal">
           <div>
             <div class="w-12 h-12 rounded-xl bg-mint/10 flex items-center justify-center text-mint text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-              🔧
+              <i class="fa-solid fa-teeth" aria-hidden="true"></i>
             </div>
             <h3 class="font-display text-2xl font-bold text-pearl mb-3 group-hover:text-mint transition-colors">Orthodontie</h3>
             <p class="text-pearl/70 text-sm md:text-base leading-relaxed mb-6 font-light">
@@ -196,7 +193,7 @@
             </p>
           </div>
           <button onclick="openServiceModal('orthodontie')" class="inline-flex items-center text-mint font-semibold text-sm group-hover:translate-x-[6px] transition-transform duration-300 cursor-pointer">
-            En Savoir Plus <span class="ml-1">→</span>
+            En Savoir Plus <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i>
           </button>
         </div>
 
@@ -204,7 +201,7 @@
         <div class="bg-navy-card/40 backdrop-blur-md border border-pearl/10 p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,229,195,0.12)] hover:border-mint/30 transition-all duration-300 flex flex-col justify-between group reveal">
           <div>
             <div class="w-12 h-12 rounded-xl bg-mint/10 flex items-center justify-center text-mint text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-              🪥
+              <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
             </div>
             <h3 class="font-display text-2xl font-bold text-pearl mb-3 group-hover:text-mint transition-colors">Implants Dentaires</h3>
             <p class="text-pearl/70 text-sm md:text-base leading-relaxed mb-6 font-light">
@@ -212,7 +209,7 @@
             </p>
           </div>
           <button onclick="openServiceModal('implants')" class="inline-flex items-center text-mint font-semibold text-sm group-hover:translate-x-[6px] transition-transform duration-300 cursor-pointer">
-            En Savoir Plus <span class="ml-1">→</span>
+            En Savoir Plus <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i>
           </button>
         </div>
 
@@ -220,7 +217,7 @@
         <div class="bg-navy-card/40 backdrop-blur-md border border-pearl/10 p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,229,195,0.12)] hover:border-mint/30 transition-all duration-300 flex flex-col justify-between group reveal">
           <div>
             <div class="w-12 h-12 rounded-xl bg-mint/10 flex items-center justify-center text-mint text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-              😁
+              <i class="fa-solid fa-face-smile" aria-hidden="true"></i>
             </div>
             <h3 class="font-display text-2xl font-bold text-pearl mb-3 group-hover:text-mint transition-colors">Facettes Dentaires</h3>
             <p class="text-pearl/70 text-sm md:text-base leading-relaxed mb-6 font-light">
@@ -228,7 +225,7 @@
             </p>
           </div>
           <button onclick="openServiceModal('facettes')" class="inline-flex items-center text-mint font-semibold text-sm group-hover:translate-x-[6px] transition-transform duration-300 cursor-pointer">
-            En Savoir Plus <span class="ml-1">→</span>
+            En Savoir Plus <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i>
           </button>
         </div>
 
@@ -236,7 +233,7 @@
         <div class="bg-navy-card/40 backdrop-blur-md border border-pearl/10 p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,229,195,0.12)] hover:border-mint/30 transition-all duration-300 flex flex-col justify-between group reveal">
           <div>
             <div class="w-12 h-12 rounded-xl bg-mint/10 flex items-center justify-center text-mint text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-              🩺
+              <i class="fa-solid fa-hand-holding-medical" aria-hidden="true"></i>
             </div>
             <h3 class="font-display text-2xl font-bold text-pearl mb-3 group-hover:text-mint transition-colors">Soins des Gencives</h3>
             <p class="text-pearl/70 text-sm md:text-base leading-relaxed mb-6 font-light">
@@ -244,7 +241,7 @@
             </p>
           </div>
           <button onclick="openServiceModal('gencives')" class="inline-flex items-center text-mint font-semibold text-sm group-hover:translate-x-[6px] transition-transform duration-300 cursor-pointer">
-            En Savoir Plus <span class="ml-1">→</span>
+            En Savoir Plus <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i>
           </button>
         </div>
 
@@ -252,7 +249,7 @@
         <div class="bg-navy-card/40 backdrop-blur-md border border-pearl/10 p-8 rounded-2xl hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,229,195,0.12)] hover:border-mint/30 transition-all duration-300 flex flex-col justify-between group reveal">
           <div>
             <div class="w-12 h-12 rounded-xl bg-mint/10 flex items-center justify-center text-mint text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-              👶
+              <i class="fa-solid fa-child" aria-hidden="true"></i>
             </div>
             <h3 class="font-display text-2xl font-bold text-pearl mb-3 group-hover:text-mint transition-colors">Dentisterie Pédiatrique</h3>
             <p class="text-pearl/70 text-sm md:text-base leading-relaxed mb-6 font-light">
@@ -260,7 +257,7 @@
             </p>
           </div>
           <button onclick="openServiceModal('pediatrique')" class="inline-flex items-center text-mint font-semibold text-sm group-hover:translate-x-[6px] transition-transform duration-300 cursor-pointer">
-            En Savoir Plus <span class="ml-1">→</span>
+            En Savoir Plus <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -305,7 +302,7 @@
               <!-- Handle / Divider -->
               <div class="absolute top-0 bottom-0 w-[2px] bg-mint z-20 drag-handle" style="left: 50%;">
                 <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-mint text-navy-dark shadow-lg shadow-mint/40 flex items-center justify-center font-bold text-xs select-none">
-                  ◀▶
+                  <i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i>
                 </div>
               </div>
             </div>
@@ -341,7 +338,7 @@
               <!-- Handle / Divider -->
               <div class="absolute top-0 bottom-0 w-[2px] bg-mint z-20 drag-handle" style="left: 50%;">
                 <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-mint text-navy-dark shadow-lg shadow-mint/40 flex items-center justify-center font-bold text-xs select-none">
-                  ◀▶
+                  <i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i>
                 </div>
               </div>
             </div>
@@ -377,7 +374,7 @@
               <!-- Handle / Divider -->
               <div class="absolute top-0 bottom-0 w-[2px] bg-mint z-20 drag-handle" style="left: 50%;">
                 <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-mint text-navy-dark shadow-lg shadow-mint/40 flex items-center justify-center font-bold text-xs select-none">
-                  ◀▶
+                  <i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i>
                 </div>
               </div>
             </div>
@@ -509,9 +506,9 @@
           <div class="w-full shrink-0 px-4">
             <div class="bg-navy-card/80 border border-pearl/10 rounded-3xl p-8 md:p-12 relative shadow-2xl">
               <!-- Decorative quote icon -->
-              <span class="absolute top-6 left-8 font-serif text-mint text-8xl opacity-10 pointer-events-none">“</span>
-              <div class="flex items-center text-mint gap-1 mb-6 text-xl">
-                ★★★★★
+              <i class="fa-solid fa-quote-left absolute top-6 left-8 text-mint text-8xl opacity-10 pointer-events-none" aria-hidden="true"></i>
+              <div class="flex items-center text-mint gap-1 mb-6 text-xl" role="img" aria-label="5 étoiles sur 5">
+                <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
               </div>
               <p class="text-pearl/85 text-base md:text-xl font-light italic leading-relaxed mb-8 relative z-10">
                 "Une expérience absolument irréprochable. L'équipe de PureSmile a su me mettre en confiance dès le premier rendez-vous. Le résultat de mon blanchiment dentaire dépasse toutes mes espérances ! Je recommande chaleureusement."
@@ -526,9 +523,9 @@
           <!-- Testimonial 2 -->
           <div class="w-full shrink-0 px-4">
             <div class="bg-navy-card/80 border border-pearl/10 rounded-3xl p-8 md:p-12 relative shadow-2xl">
-              <span class="absolute top-6 left-8 font-serif text-mint text-8xl opacity-10 pointer-events-none">“</span>
-              <div class="flex items-center text-mint gap-1 mb-6 text-xl">
-                ★★★★★
+              <i class="fa-solid fa-quote-left absolute top-6 left-8 text-mint text-8xl opacity-10 pointer-events-none" aria-hidden="true"></i>
+              <div class="flex items-center text-mint gap-1 mb-6 text-xl" role="img" aria-label="5 étoiles sur 5">
+                <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
               </div>
               <p class="text-pearl/85 text-base md:text-xl font-light italic leading-relaxed mb-8 relative z-10">
                 "J'ai opté pour le traitement d'orthodontie invisible. Le docteur Karim Bouras a fait preuve d'un professionnalisme hors pair. Les gouttières sont confortables, discrètes, et mon alignement est désormais parfait."
@@ -543,9 +540,9 @@
           <!-- Testimonial 3 -->
           <div class="w-full shrink-0 px-4">
             <div class="bg-navy-card/80 border border-pearl/10 rounded-3xl p-8 md:p-12 relative shadow-2xl">
-              <span class="absolute top-6 left-8 font-serif text-mint text-8xl opacity-10 pointer-events-none">“</span>
-              <div class="flex items-center text-mint gap-1 mb-6 text-xl">
-                ★★★★★
+              <i class="fa-solid fa-quote-left absolute top-6 left-8 text-mint text-8xl opacity-10 pointer-events-none" aria-hidden="true"></i>
+              <div class="flex items-center text-mint gap-1 mb-6 text-xl" role="img" aria-label="5 étoiles sur 5">
+                <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
               </div>
               <p class="text-pearl/85 text-base md:text-xl font-light italic leading-relaxed mb-8 relative z-10">
                 "En tant que médecin, j'accorde une importance capitale à l'hygiène et à la rigueur technique. Chez PureSmile, j'ai trouvé un plateau technique d'exception et une équipe d'une compétence rare pour la pose de mes implants."
@@ -560,9 +557,9 @@
           <!-- Testimonial 4 -->
           <div class="w-full shrink-0 px-4">
             <div class="bg-navy-card/80 border border-pearl/10 rounded-3xl p-8 md:p-12 relative shadow-2xl">
-              <span class="absolute top-6 left-8 font-serif text-mint text-8xl opacity-10 pointer-events-none">“</span>
-              <div class="flex items-center text-mint gap-1 mb-6 text-xl">
-                ★★★★★
+              <i class="fa-solid fa-quote-left absolute top-6 left-8 text-mint text-8xl opacity-10 pointer-events-none" aria-hidden="true"></i>
+              <div class="flex items-center text-mint gap-1 mb-6 text-xl" role="img" aria-label="5 étoiles sur 5">
+                <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
               </div>
               <p class="text-pearl/85 text-base md:text-xl font-light italic leading-relaxed mb-8 relative z-10">
                 "Le cabinet est magnifique, on se croirait dans un spa de luxe à Genève. L'accueil est chaleureux et les soins pédiatriques prodigués à mon fils se sont déroulés sans aucune douleur ni peur. Merci infiniment !"
@@ -670,7 +667,7 @@
 
           <!-- Submit Button -->
           <button type="submit" class="w-full bg-mint hover:bg-mint-hover text-navy-dark font-bold py-4 px-8 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(0,229,195,0.35)] flex items-center justify-center gap-2 cursor-pointer text-base">
-            Confirmer Mon Rendez-Vous <span class="text-lg">→</span>
+            Confirmer Mon Rendez-Vous <i class="fa-solid fa-arrow-right text-lg" aria-hidden="true"></i>
           </button>
         </form>
 
@@ -678,9 +675,7 @@
         <div id="booking-success" class="hidden flex-col items-center justify-center py-12 text-center space-y-6">
           <!-- Pulse Checkmark SVG -->
           <div class="w-20 h-20 bg-mint/10 border border-mint rounded-full flex items-center justify-center text-mint animate-bounce shadow-[0_0_20px_rgba(0,229,195,0.3)]">
-            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
-            </svg>
+            <i class="fa-solid fa-check text-4xl" aria-hidden="true"></i>
           </div>
           <h3 class="text-3xl font-display text-mint font-bold">Demande Envoyée !</h3>
           <p class="text-pearl/80 max-w-md font-light leading-relaxed">
@@ -703,7 +698,7 @@
       <!-- Clinic Brand Tagline -->
       <div class="lg:col-span-4 flex flex-col justify-start">
         <a href="#" class="font-display text-3xl font-bold tracking-wide text-pearl mb-6">
-          PureSmile <span class="text-mint text-xl font-normal">✦</span>
+          PureSmile <i class="fa-solid fa-sparkles text-mint text-xl" aria-hidden="true"></i>
         </a>
         <p class="text-pearl/70 font-light leading-relaxed max-w-sm mb-6">
           L'excellence au service de votre sourire. Un environnement luxueux combinant innovations cliniques et attention personnalisée.
@@ -712,21 +707,15 @@
         <div class="flex items-center gap-4">
           <!-- Instagram -->
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full border border-pearl/10 hover:border-mint text-pearl/60 hover:text-mint flex items-center justify-center transition-colors">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-            </svg>
+            <i class="fa-brands fa-instagram text-xl" aria-hidden="true"></i>
           </a>
           <!-- Facebook -->
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-full border border-pearl/10 hover:border-mint text-pearl/60 hover:text-mint flex items-center justify-center transition-colors">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
+            <i class="fa-brands fa-facebook-f text-xl" aria-hidden="true"></i>
           </a>
           <!-- WhatsApp Link -->
           <a href="https://wa.me/213555123456" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-10 h-10 rounded-full border border-pearl/10 hover:border-mint text-pearl/60 hover:text-mint flex items-center justify-center transition-colors">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
+            <i class="fa-brands fa-whatsapp text-xl" aria-hidden="true"></i>
           </a>
         </div>
       </div>
@@ -748,19 +737,19 @@
         <h4 class="text-pearl font-bold font-display text-lg tracking-wider mb-6">Coordonnées</h4>
         <ul class="space-y-4 text-sm text-pearl/70 font-light">
           <li class="flex items-start gap-3">
-            <span class="text-mint text-base">📍</span>
+            <i class="fa-solid fa-location-dot text-mint" aria-hidden="true"></i>
             <span>12 Rue des Fleurs, Alger</span>
           </li>
           <li class="flex items-center gap-3">
-            <span class="text-mint text-base">📞</span>
+            <i class="fa-solid fa-phone text-mint" aria-hidden="true"></i>
             <span>+213 555 123 456</span>
           </li>
           <li class="flex items-center gap-3">
-            <span class="text-mint text-base">📧</span>
+            <i class="fa-solid fa-envelope text-mint" aria-hidden="true"></i>
             <a href="mailto:hello@puresmile.dz" class="hover:text-mint transition-colors">hello@puresmile.dz</a>
           </li>
           <li class="flex items-start gap-3 mt-2">
-            <span class="text-mint text-base">⏱</span>
+            <i class="fa-solid fa-clock text-mint" aria-hidden="true"></i>
             <div>
               <p>Lun–Ven : 8h – 19h</p>
               <p>Sam : 9h – 16h</p>
@@ -804,7 +793,7 @@
     <div class="relative flex items-center group pointer-events-auto">
       <!-- Tooltip Bubble (Left side expansion) -->
       <a href="https://wa.me/213555123456" target="_blank" rel="noopener noreferrer" class="absolute right-16 bg-navy-card border border-mint/20 text-pearl text-xs md:text-sm font-semibold py-2 px-4 rounded-xl shadow-2xl transition-all duration-300 opacity-0 scale-95 origin-right pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto whitespace-nowrap flex items-center gap-2">
-        💬 Discutez avec nous sur WhatsApp
+        <i class="fa-regular fa-comment-dots" aria-hidden="true"></i> Discutez avec nous sur WhatsApp
       </a>
       
       <!-- Button -->
@@ -813,17 +802,13 @@
         <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-35 animate-ping" style="animation-duration: 2.2s;"></span>
         
         <!-- WhatsApp Icon -->
-        <svg class="w-8 h-8 relative z-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg>
+        <i class="fa-brands fa-whatsapp text-3xl relative z-10" aria-hidden="true"></i>
       </a>
     </div>
 
     <!-- Scroll-to-Top Button -->
     <button id="scroll-top-btn" aria-label="Retourner en haut" class="w-10 h-10 rounded-full bg-navy-card/90 border border-mint/20 text-mint flex items-center justify-center shadow-lg hover:bg-mint hover:text-navy-dark transition-all duration-300 opacity-0 scale-90 translate-y-4 cursor-pointer pointer-events-auto">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-      </svg>
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
     </button>
   </div>
 
@@ -832,7 +817,7 @@
   <div id="service-modal" class="fixed inset-0 z-50 items-center justify-center hidden bg-navy-dark/90 backdrop-blur-md p-4">
     <div class="bg-navy-card border border-mint/20 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative transition-transform duration-300 scale-95" id="modal-content">
       <!-- Close button -->
-      <button id="close-modal" class="absolute top-4 right-5 text-pearl/50 hover:text-mint transition-colors text-3xl font-light cursor-pointer" aria-label="Fermer la modal">&times;</button>
+      <button id="close-modal" class="absolute top-4 right-5 text-pearl/50 hover:text-mint transition-colors text-xl cursor-pointer" aria-label="Fermer la modal"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
       
       <div class="p-8 md:p-10">
         <!-- Content -->
